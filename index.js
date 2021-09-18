@@ -13,22 +13,22 @@ app.use(cors());
 
 const USERNAME = process.env.USERNAME;
 const PASSWORD = process.env.PASSWORD;
-const HOST = process.env.HOST;
-const DBPORT = parseInt(process.env.DBPORT);
+const DB_HOST = process.env.DB_HOST;
+const DB_PORT = parseInt(process.env.DB_PORT);
 const DATABASE = process.env.DATABASE;
 const HOME = process.env.HOME;
 
 
+const HOST = process.env.HOST || 'localhost';
 const PORT = process.env.PORT || 8000;
-
 
 // Connect to the database
 var sequelize = new Sequelize({
     dialect: 'postgres',
     username: USERNAME,
     password: PASSWORD,
-    host: HOST,
-    port: DBPORT,
+    host: DB_HOST,
+    port: DB_PORT,
     database: DATABASE,
     logging: false,
     dialectOptions: {
@@ -215,5 +215,5 @@ app.get('/delete/', (req, res) => {
 
 
 app.listen(PORT, () => {
-    console.log(`Server started on Port: ${PORT}`);
+    console.log(`Server started on: ${HOST}:${PORT}`);
 });

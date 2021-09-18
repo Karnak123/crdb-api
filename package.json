@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "test": "nodemon index.js"
   },
-  "keywords": ["HackMIT"],
+  "keywords": [
+    "HackMIT"
+  ],
   "author": "Sagnik Mazumder",
   "license": "ISC",
   "dependencies": {
@@ -14,6 +17,7 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "nodejs": "^0.0.0",
+    "nodemon": "^2.0.12",
     "sequelize": "^6.6.5",
     "sequelize-cockroachdb": "^6.0.1"
   }
